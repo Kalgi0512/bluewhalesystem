@@ -21,7 +21,7 @@ const LeadsPage = () => {
   const navigate = useNavigate();
 
   const handleLeadClick = (leadId) => {
-    navigate(`/dashboard/leads/${leadId}`);
+    navigate(`/sales-dashboard/leads/${leadId}`);
   };
 
   const handleCloseDetails = () => {

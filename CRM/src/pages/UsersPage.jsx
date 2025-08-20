@@ -323,7 +323,7 @@ const users = [
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   {paginatedUsers.length > 0 ? (
                     paginatedUsers.map((user, index) => (
                       <motion.tr
@@ -454,7 +454,7 @@ const users = [
 
           {/* Mobile Cards */}
           <div className="lg:hidden">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {paginatedUsers.length > 0 ? (
                 <div className="space-y-4 p-4">
                   {paginatedUsers.map((user, index) => (
