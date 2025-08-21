@@ -153,18 +153,18 @@ const CandidateDetailsPage = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="space-y-6 p-6"
+      className="space-y-6 py-5 sm:p-6"
     >
       {/* Header */}
       <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
         <motion.button
-          onClick={() => navigate('/sales-dashboard/candidates')}
+          onClick={() => navigate(-1)}
           className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors group cursor-pointer"
           whileHover={{ x: -5 }}
           whileTap={{ scale: 0.95 }}
         >
           <ArrowLeft size={20} className="group-hover:scale-110 transition-transform" />
-          <span className="font-medium">Back to Candidates</span>
+          <span className="font-medium">Back</span>
         </motion.button>
       </motion.div>
 
@@ -291,7 +291,7 @@ const CandidateDetailsPage = () => {
         <button
           key={tab}
           onClick={() => setActiveTab(tab.toLowerCase().replace(' ', '-'))}
-          className={`relative px-6 py-4 text-sm font-medium transition-all duration-300 group ${activeTab === tab.toLowerCase().replace(' ', '-')
+          className={`relative px-3 sm:px-6 py-4 text-xs sm:text-sm font-medium transition-all duration-300 group ${activeTab === tab.toLowerCase().replace(' ', '-')
               ? 'text-[var(--color-primary)]'
               : 'text-gray-500 hover:text-gray-700'
             }`}
@@ -303,7 +303,7 @@ const CandidateDetailsPage = () => {
     </div>
 
     {/* Tab Content */}
-    <div className="p-8">
+    <div className=" p-4 sm:p-8">
       <AnimatePresence>
         {activeTab === 'personal-info' && (
           <motion.div
@@ -489,7 +489,7 @@ const CandidateDetailsPage = () => {
                 <p className="text-sm text-gray-500 mt-1">Candidate's documents and files</p>
               </div>
 
-              <div className="bg-blue-50/80 p-6 rounded-xl border border-blue-100">
+              <div className="bg-blue-50/80 p-3 sm:p-6 rounded-xl border border-blue-100">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-blue-100 rounded-xl">
                     <FileText className="h-8 w-8 text-[var(--color-secondary)]" />
@@ -498,7 +498,7 @@ const CandidateDetailsPage = () => {
                     <h4 className="font-semibold">John_Smith_Resume.pdf</h4>
                     <p className="text-sm text-gray-600">Uploaded on May 15, 2023</p>
                   </div>
-                  <button className="ml-auto flex items-center gap-2 px-4 py-2 bg-gradient-primary text-white rounded-lg cursor-pointer transition-colors">
+                  <button className="ml-auto hidden sm:flex items-center gap-2 px-4 py-2 bg-gradient-primary text-white rounded-lg cursor-pointer transition-colors">
                     <Download size={16} />
                     Download
                   </button>

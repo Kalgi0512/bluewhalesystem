@@ -384,13 +384,15 @@ const candidates = [
                       >
                         <td className="px-6 py-4">
                           <div className="flex items-center space-x-3">
-                            <div className={`p-2 rounded-xl ${candidate.type === 'B2C' ? 'bg-blue-100' : 'bg-indigo-100'}`}>
+                            <motion.div
+                            whileHover={{ rotate: 360, scale: 1.1 }}
+                            transition={{ duration: 0.6 }} className={`p-2 rounded-xl ${candidate.type === 'B2C' ? 'bg-blue-100' : 'bg-indigo-100'}`}>
                               {candidate.type === 'B2C' ? (
                                 <User className="h-5 w-5 text-blue-600" />
                               ) : (
                                 <Briefcase className="h-5 w-5 text-indigo-600" />
                               )}
-                            </div>
+                            </motion.div>
                             <div className="space-y-1 cursor-pointer">
                               <div className="text-sm font-semibold text-gray-900">
                                 {candidate.name}
@@ -462,6 +464,7 @@ const candidates = [
                   {paginatedCandidates.map((candidate) => (
                     <motion.div
                       key={candidate.id}
+                      onClick={() => handleRowClick(candidate.id)}
                       className="p-6 space-y-3"
                       variants={tableRowVariants}
                       initial="hidden"

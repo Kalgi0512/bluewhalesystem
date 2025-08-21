@@ -29,7 +29,6 @@ const navItems = [
   { to: "/sales-dashboard/applications", label: "Job Applications", icon: FileText },
   { to: "/sales-dashboard/chats", label: "Chat", icon: MessageSquare },
     { to: "/sales-dashboard/leads", label: "Leads", icon: UserPlus },
-  { to: "/sales-dashboard/reviews", label: "Profile Reviews", icon: CheckCircle },
     { to: "/sales-dashboard/meetings", label: "Meetings", icon: CalendarDays },
   { to: "/sales-dashboard/reports", label: "Reports", icon: BarChart3 },
   { to: "/sales-dashboard/settings", label: "Settings", icon: Settings }
@@ -332,7 +331,7 @@ const SalesDashboardLayout = () => {
 
         {/* Content wrapper with glass effect */}
         <motion.div
-          className="relative z-10 bg-white/50 backdrop-blur-sm lg:rounded-2xl p-5 lg:p-8 min-h-full shadow-xl border border-white/30"
+          className="relative z-10 bg-white/50 backdrop-blur-sm lg:rounded-2xl p-2 lg:p-8 min-h-full shadow-xl border border-white/30"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
