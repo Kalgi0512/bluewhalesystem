@@ -39,6 +39,16 @@ import ScrollToTop from "./components/ScrollToTop";
 import CandidateSubAdminReports from "./pages/CandidateSubAdmin/CandidateSubAdminReports";
 import CandidateSubAdminMeetingsPage from "./pages/CandidateSubAdmin/CandidateSubAdminMeetingsPage";
 import CandidateSubAdminSettings from "./pages/CandidateSubAdmin/CandidateSubAdminSettings";
+import AgentDashboardPage from "./pages/AgentSubAdmin/DashboardPage";
+import AgentsPage from "./pages/AgentSubAdmin/AgentsPage";
+import AgentDetailsPage from "./pages/AgentSubAdmin/AgentDetailsPage";
+import AgentLeadsPage from "./pages/AgentSubAdmin/AgentLeadsPage";
+import AgentLeadsDetailsPage from "./pages/AgentSubAdmin/AgentLeadsDetailsPage";
+import AgentChatsPage from "./pages/AgentSubAdmin/AgentChatsPage";
+import AgentSubAdminReports from "./pages/AgentSubAdmin/AgentSubAdminReports";
+import AgentSubAdminMeetingsPage from "./pages/AgentSubAdmin/AgentSubAdminMeetingsPage";
+import AgentSubAdminSettings from "./pages/AgentSubAdmin/AgentSubAdminSettings";
+import AgentJobApplicationsPage from "./pages/AgentSubAdmin/JobApplicationsPage";
 
 const App = () => {
   return (
@@ -102,6 +112,16 @@ const App = () => {
             </ProtectedRoute>
           }
         >
+          <Route index element={<AgentDashboardPage />} />
+          <Route path="agents" element={<AgentsPage />} />
+          <Route path="agents/:id" element={<AgentDetailsPage />} />
+          <Route path="applications" element={<AgentJobApplicationsPage />} />
+          <Route path="chats" element={<AgentChatsPage />} />
+          <Route path="leads" element={<AgentLeadsPage />} />
+          <Route path="leads/:id" element={<AgentLeadsDetailsPage />} />
+          <Route path="meetings" element={<AgentSubAdminMeetingsPage />} />
+          <Route path="reports" element={<AgentSubAdminReports />} />
+          <Route path="settings" element={<AgentSubAdminSettings />} />
           <Route path="mytasks" element={<MyTasksPage />} />
           <Route path="client" element={<ClientsPage />} />
           <Route path="candidatepage" element={<CandidatePage />} />
