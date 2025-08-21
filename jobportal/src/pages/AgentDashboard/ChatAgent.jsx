@@ -145,30 +145,30 @@ const ChatAgent = () => {
       animate={{ opacity: 1, y: 0 }}
       className={`flex ${isOwnMessage ? 'justify-end' : 'justify-start'} mb-4`}
     >
-      <div className={`flex items-end gap-2 max-w-[70%] ${isOwnMessage ? 'flex-row-reverse' : 'flex-row'}`}>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-          isOwnMessage ? 'bg-blue-600' : 'bg-gray-600'
+      <div className={`flex items-end gap-3 max-w-[75%] ${isOwnMessage ? 'flex-row-reverse' : 'flex-row'}`}>
+        <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
+          isOwnMessage ? 'bg-indigo-600' : 'bg-gray-700'
         }`}>
           {isOwnMessage ? (
-            <User className="w-4 h-4 text-white" />
+            <User className="w-5 h-5 text-white" />
           ) : (
-            <Shield className="w-4 h-4 text-white" />
+            <Shield className="w-5 h-5 text-white" />
           )}
         </div>
         
-        <div className={`rounded-2xl px-4 py-3 relative ${
+        <div className={`rounded-2xl px-4 py-3 relative shadow-sm ${
           isOwnMessage 
-            ? 'bg-blue-600 text-white rounded-br-md' 
-            : 'bg-gray-100 text-gray-800 rounded-bl-md'
+            ? 'bg-indigo-600 text-white rounded-br-none' 
+            : 'bg-gray-50 text-gray-900 rounded-bl-none'
         }`}>
-          <p className="text-sm leading-relaxed">{message.message}</p>
-          <div className={`flex items-center gap-1 mt-2 text-xs ${
-            isOwnMessage ? 'text-blue-100' : 'text-gray-500'
+          <p className="text-base leading-relaxed">{message.message}</p>
+          <div className={`flex items-center gap-2 mt-2 text-xs ${
+            isOwnMessage ? 'text-indigo-100' : 'text-gray-600'
           }`}>
-            <Clock className="w-3 h-3" />
+            <Clock className="w-4 h-4" />
             <span>{formatTime(message.timestamp)}</span>
             {isOwnMessage && (
-              <CheckCircle className="w-3 h-3 ml-1" />
+              <CheckCircle className="w-4 h-4 ml-2" />
             )}
           </div>
         </div>
@@ -183,15 +183,15 @@ const ChatAgent = () => {
       exit={{ opacity: 0, y: -20 }}
       className="flex justify-start mb-4"
     >
-      <div className="flex items-end gap-2">
-        <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">
-          <Shield className="w-4 h-4 text-white" />
+      <div className="flex items-end gap-3">
+        <div className="w-9 h-9 rounded-full bg-gray-700 flex items-center justify-center">
+          <Shield className="w-5 h-5 text-white" />
         </div>
-        <div className="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3">
-          <div className="flex space-x-1">
-            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+        <div className="bg-gray-50 rounded-2xl px-4 py-3 shadow-sm">
+          <div className="flex space-x-2">
+            <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+            <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+            <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
           </div>
         </div>
       </div>
@@ -201,21 +201,21 @@ const ChatAgent = () => {
   if (loading && messages.length === 0) {
     return (
       <div className="p-6 h-full">
-        <div className="flex items-center justify-center h-96">
-          <RefreshCw className="w-8 h-8 animate-spin text-blue-600" />
+        <div className="flex items-center justify-center h-64">
+          <RefreshCw className="w-8 h-8 animate-spin text-indigo-600" />
         </div>
       </div>
     );
   }
 
   return (
-    <div className="p-6 max-w-5xl mx-auto h-full flex flex-col">
+    <div className="p-6 max-w-3xl mx-auto h-full flex flex-col">
       {/* Header */}
-      <div className="bg-white rounded-t-lg shadow-md p-4 border-b">
+      <div className="bg-white rounded-t-2xl shadow-lg p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <div className="relative">
-              <div className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${
@@ -223,17 +223,17 @@ const ChatAgent = () => {
               }`}></div>
             </div>
             <div>
-              <h2 className="text-lg font-semibold text-gray-800">Admin Support</h2>
+              <h2 className="text-lg font-bold text-gray-900">Admin Support</h2>
               <p className="text-sm text-gray-600">
                 {onlineStatus ? 'Online' : 'Offline'} • Support Team
               </p>
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <motion.button
               onClick={() => setShowSearch(!showSearch)}
-              className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+              className="p-2 text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -241,7 +241,7 @@ const ChatAgent = () => {
             </motion.button>
             <motion.button
               onClick={fetchMessages}
-              className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+              className="p-2 text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -264,7 +264,7 @@ const ChatAgent = () => {
                 <input
                   type="text"
                   placeholder="Search messages..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-base shadow-sm"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -278,15 +278,15 @@ const ChatAgent = () => {
       <div 
         ref={chatContainerRef}
         className="flex-1 bg-white p-6 overflow-y-auto"
-        style={{ maxHeight: '60vh', minHeight: '400px' }}
+        style={{ maxHeight: '40vh', minHeight: '250px' }}
       >
         {filteredMessages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center">
             <MessageCircle className="w-16 h-16 text-gray-400 mb-4" />
-            <h3 className="text-lg font-semibold text-gray-600 mb-2">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
               {searchTerm ? 'No messages found' : 'Start a conversation'}
             </h3>
-            <p className="text-gray-500 max-w-md">
+            <p className="text-gray-600 max-w-lg text-base">
               {searchTerm 
                 ? 'Try adjusting your search terms to find specific messages.'
                 : 'Send a message to get support from our admin team. We\'re here to help with your job placement needs!'
@@ -313,14 +313,14 @@ const ChatAgent = () => {
       </div>
 
       {/* Message Input */}
-      <div className="bg-white rounded-b-lg shadow-md p-4 border-t">
+      <div className="bg-white rounded-b-2xl shadow-lg p-4 border-t border-gray-200">
         <form onSubmit={sendMessage} className="flex items-end gap-3">
           <div className="flex-1 relative">
             <textarea
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               placeholder="Type your message here..."
-              className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none max-h-32"
+              className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none max-h-20 text-base shadow-sm"
               rows={1}
               onKeyPress={(e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -332,17 +332,17 @@ const ChatAgent = () => {
             />
             
             {/* Message Tools */}
-            <div className="absolute right-2 bottom-2 flex items-center gap-1">
+            <div className="absolute right-3 bottom-3 flex items-center gap-2">
               <button
                 type="button"
-                className="p-1.5 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100 transition-colors"
+                className="p-1.5 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-colors"
                 title="Attach file"
               >
                 <Paperclip className="w-4 h-4" />
               </button>
               <button
                 type="button"
-                className="p-1.5 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100 transition-colors"
+                className="p-1.5 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-colors"
                 title="Add emoji"
               >
                 <Smile className="w-4 h-4" />
@@ -353,9 +353,9 @@ const ChatAgent = () => {
           <motion.button
             type="submit"
             disabled={!newMessage.trim() || sending}
-            className={`p-3 rounded-full transition-all duration-200 ${
+            className={`p-3 rounded-full transition-all duration-200 shadow-md ${
               newMessage.trim() && !sending
-                ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg'
+                ? 'bg-indigo-600 text-white hover:bg-indigo-700'
                 : 'bg-gray-200 text-gray-400 cursor-not-allowed'
             }`}
             whileHover={newMessage.trim() && !sending ? { scale: 1.05 } : {}}
@@ -369,11 +369,11 @@ const ChatAgent = () => {
           </motion.button>
         </form>
         
-        <div className="flex items-center justify-between mt-3 text-xs text-gray-500">
+        <div className="flex items-center justify-between mt-3 text-sm text-gray-600">
           <div className="flex items-center gap-4">
             <span>Press Enter to send, Shift+Enter for new line</span>
             {onlineStatus && (
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 Admin Online
               </div>
