@@ -251,16 +251,16 @@ const Applications = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center lg:text-left"
         >
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#1B3890] via-[#0F79C5] to-[#38BDF8] bg-clip-text text-transparent mb-4">
+          <h1 className="text-heading-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2">
             My Applications
           </h1>
           <motion.div
-            className="h-1.5 w-48 rounded-full mx-auto lg:mx-0 bg-gradient-to-r from-[#1B3890] to-[#0F79C5] mb-4"
+            className="h-1 w-48 rounded-full mx-auto lg:mx-0 bg-gradient-primary mb-4"
             initial={{ width: 0 }}
             animate={{ width: 192 }}
             transition={{ delay: 0.3, duration: 1 }}
           />
-          <p className="text-gray-600 text-lg">Track all applications submitted for your candidates</p>
+          <p className="text-muted-dark">Track all applications submitted for your candidates</p>
         </motion.div>
 
         {/* Enhanced Search and Filters */}
@@ -317,7 +317,7 @@ const Applications = () => {
                 <FileText className="w-12 h-12 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">No Applications Found</h3>
-              <p className="text-gray-600 text-lg leading-relaxed max-w-md mx-auto">
+              <p className="text-muted-dark text-lg leading-relaxed max-w-md mx-auto">
                 {searchTerm || statusFilter !== 'all' 
                   ? 'Try adjusting your filters to see more applications.' 
                   : 'No applications have been submitted for your candidates yet. Start by managing your candidates and their job applications.'}

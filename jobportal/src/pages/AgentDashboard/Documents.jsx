@@ -159,15 +159,15 @@ const Documents = () => {
        transition={{ duration: 0.5 }} 
        className="text-center"
      >
-       <div className="flex items-center justify-center gap-3 mb-4">
+       <div className="flex items-center justify-center gap-3 mb-2">
          <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
            <FileText className="w-7 h-7 text-white" />
          </div>
-         <h1 className="text-3xl font-bold text-gray-800">
+         <h1 className="text-heading-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
            Document Manager
          </h1>
        </div>
-       <p className="text-gray-600 max-w-2xl mx-auto">
+       <p className="text-muted-dark max-w-2xl mx-auto">
          Securely upload and manage your important documents
        </p>
      </motion.div>
@@ -338,7 +338,7 @@ const Documents = () => {
              className={`px-8 py-3 rounded-xl text-white font-semibold transition-all duration-200 ${
                loading || Object.keys(files).length === 0
                  ? "bg-gray-400 cursor-not-allowed" 
-                 : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 shadow-sm hover:shadow-md"
+                 : "bg-gradient-primary hover:from-blue-600 hover:to-blue-700 shadow-sm hover:shadow-md"
              }`}
              whileHover={!loading && Object.keys(files).length > 0 ? { scale: 1.02 } : {}}
              whileTap={!loading && Object.keys(files).length > 0 ? { scale: 0.98 } : {}}

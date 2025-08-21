@@ -267,7 +267,7 @@ const Inquiries = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <label className="block text-sm font-semibold text-green-700 flex items-center gap-2">
+                  <label className="text-sm font-semibold text-green-700 flex items-center gap-2">
                     <Sparkles className="w-4 h-4" />
                     Admin Response
                   </label>
@@ -307,28 +307,28 @@ const Inquiries = () => {
         className="text-center md:text-left"
       >
         <motion.h1 
-          className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-3"
+          className="text-heading-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600  bg-clip-text text-transparent pb-1"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.1 }}
         >
           My Inquiries
         </motion.h1>
-        <motion.p 
-          className="text-gray-600 text-lg"
+        <motion.div
+          className="h-1 w-24 rounded-full mt-1 mx-auto md:mx-0"
+          style={{ background: "linear-gradient(90deg, #1B3890, #0F79C5)" }}
+          initial={{ width: 0 }}
+          animate={{ width: 96 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        />
+                <motion.p 
+          className="text-muted-dark mt-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
           Create and track inquiries to admin support
         </motion.p>
-        <motion.div
-          className="h-1 w-24 rounded-full mt-4 mx-auto md:mx-0"
-          style={{ background: "linear-gradient(90deg, #1B3890, #0F79C5)" }}
-          initial={{ width: 0 }}
-          animate={{ width: 96 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        />
       </motion.div>
 
       {/* New Inquiry Form */}
@@ -441,7 +441,7 @@ const Inquiries = () => {
               No Inquiries Found
             </motion.h3>
             <motion.p 
-              className="text-gray-500 text-lg"
+              className="text-muted-dark text-lg"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9 }}

@@ -172,7 +172,7 @@ const ManagedCandidates = () => {
         <div className="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 p-6">
           <div className="flex items-center gap-4">
             <motion.div 
-              className="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-xl"
+              className="p-3 bg-gradient-primary rounded-2xl shadow-xl"
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -180,7 +180,7 @@ const ManagedCandidates = () => {
             </motion.div>
             <div>
               <motion.h1 
-                className="text-3xl font-bold bg-gradient-to-r from-gray-800 via-blue-700 to-indigo-600 bg-clip-text text-transparent"
+                className="text-heading-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-1"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
@@ -188,7 +188,7 @@ const ManagedCandidates = () => {
                 Managed Candidates
               </motion.h1>
               <motion.p 
-                className="text-gray-600 mt-2 text-base"
+                className="text-muted-dark"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
@@ -200,7 +200,7 @@ const ManagedCandidates = () => {
           
           <motion.button 
             onClick={() => setShowAddForm(true)} 
-            className="flex items-center gap-3 px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group"
+            className="flex items-center gap-3 px-6 py-3 bg-gradient-primary text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -471,7 +471,7 @@ const ManagedCandidates = () => {
               {/* Modal Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl">
+                  <div className="p-2 bg-gradient-primary rounded-2xl">
                     <Users className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -497,7 +497,7 @@ const ManagedCandidates = () => {
                   onClick={() => setActiveTab('info')} 
                   className={`flex-1 px-4 py-2 rounded-xl font-semibold transition-all duration-300 ${
                     activeTab === 'info' 
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg' 
+                      ? 'bg-gradient-primary text-white shadow-lg' 
                       : 'text-gray-600 hover:text-blue-600'
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -509,7 +509,7 @@ const ManagedCandidates = () => {
                   onClick={() => setActiveTab('documents')} 
                   className={`flex-1 px-4 py-2 rounded-xl font-semibold transition-all duration-300 ${
                     activeTab === 'documents' 
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg' 
+                      ? 'bg-gradient-primary text-white shadow-lg' 
                       : 'text-gray-600 hover:text-blue-600'
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -674,7 +674,7 @@ const ManagedCandidates = () => {
                   <motion.button 
                     type="submit" 
                     disabled={loading} 
-                    className="flex-1 flex items-center justify-center gap-3 px-5 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="flex-1 flex items-center justify-center gap-3 px-5 py-3 bg-gradient-primary text-white rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all duration-300"
                     whileHover={{ scale: loading ? 1 : 1.02, y: loading ? 0 : -2 }}
                     whileTap={{ scale: loading ? 1 : 0.98 }}
                   >
@@ -717,7 +717,7 @@ const ManagedCandidates = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <motion.div 
-                    className="p-2 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg"
+                    className="p-2 bg-gradient-primary rounded-2xl shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
                     <Eye className="w-5 h-5 text-white" />

@@ -270,19 +270,19 @@ const Profile = () => {
 
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center md:text-left">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 via-blue-700 to-indigo-600 bg-clip-text text-transparent mb-3">
+          <h1 className="text-heading-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent pb-1">
             My Profile
           </h1>
           <motion.div
             className="h-1 w-24 rounded-full mx-auto md:mx-0"
             style={{ 
-              background: "linear-gradient(90deg, #1B3890, #0F79C5, #1B3890)" 
+              background: "linear-gradient(90deg, #1B3890, #0F79C5)" 
             }}
             initial={{ width: 0 }}
             animate={{ width: 96 }}
             transition={{ delay: 0.5, duration: 1 }}
           />
-          <p className="text-gray-600 mt-3 text-base">Manage your professional information</p>
+          <p className="text-muted-dark mt-3 text-base">Manage your professional information</p>
         </motion.div>
 
         {/* Main Profile Card */}
@@ -291,7 +291,7 @@ const Profile = () => {
           className="bg-white/90 backdrop-blur-xl rounded-2xl border border-white/50 shadow-xl overflow-hidden relative"
         >
           {/* Gradient Header */}
-          <div className="h-24 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 relative">
+          <div className="h-24 bg-gradient-primary relative">
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
@@ -363,12 +363,11 @@ const Profile = () => {
               <motion.button
                 onClick={isEditing ? handleSave : () => setIsEditing(true)}
                 disabled={loading}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold shadow-xl flex items-center gap-2 group relative overflow-hidden cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-3 bg-gradient-primary text-white rounded-xl font-semibold shadow-xl flex items-center gap-2 group relative overflow-hidden cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 whileHover={{ scale: loading ? 1 : 1.05, y: loading ? 0 : -2 }}
                 whileTap={{ scale: loading ? 1 : 0.95 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 flex items-center gap-2">
                   {loading ? (
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

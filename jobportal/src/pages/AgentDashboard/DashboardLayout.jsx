@@ -43,14 +43,14 @@ const SidebarItem = ({ to, icon: Icon, label, onClick, index, isActive = false }
        onClick={onClick}
        className={`group flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium transition-all duration-300 relative overflow-hidden w-full text-left transform ${
          isActive
-           ? "text-white shadow-lg scale-[1.02] bg-gradient-to-r from-blue-600 to-blue-700"
-           : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
+           ? "text-white shadow-lg scale-[1.02] bg-gradient-primary"
+           : "text-gray-700 hover:text-[var(--color-secondary)] hover:bg-blue-50"
        }`}
      >
        {/* Active Background */}
        {isActive && (
          <motion.div
-           className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700"
+           className="absolute inset-0 rounded-xl bg-gradient-primary"
            initial={{ scale: 0.8, opacity: 0 }}
            animate={{ scale: 1, opacity: 1 }}
            transition={{ duration: 0.3, ease: "easeOut" }}
@@ -77,7 +77,7 @@ const SidebarItem = ({ to, icon: Icon, label, onClick, index, isActive = false }
            }`}
          >
            <Icon className={`w-4 h-4 transition-all duration-200 ${
-             isActive ? "text-white" : "text-blue-600"
+             isActive ? "text-white" : "text-[var(--color-secondary)]"
            }`} />
          </motion.div>
          <span className="flex-1 text-sm font-semibold">{label}</span>
@@ -188,7 +188,7 @@ const AgentDashboardLayout = () => {
                  className="mb-6"
                >
                  <div className="flex items-center gap-3 mb-3">
-                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-sm">
+                   <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-sm">
                      <User className="w-5 h-5 text-white" />
                    </div>
                    <div>
@@ -198,7 +198,6 @@ const AgentDashboardLayout = () => {
                      <p className="text-xs text-gray-500">Management Portal</p>
                    </div>
                  </div>
-                 <div className="h-1 w-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-600" />
                </motion.div>
 
                {/* Navigation - NO Scroll */}

@@ -154,7 +154,7 @@ const Analytics = () => {
           className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
         >
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 via-blue-700 to-indigo-600 bg-clip-text text-transparent mb-3">
+            <h1 className="text-heading-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600  bg-clip-text text-transparent mb-2">
               Analytics Dashboard
             </h1>
             <motion.div
@@ -163,7 +163,7 @@ const Analytics = () => {
               animate={{ width: 128 }}
               transition={{ delay: 0.3, duration: 1 }}
             />
-            <p className="text-gray-600 mt-3 text-base">
+            <p className="text-muted-dark mt-3">
               Track your performance and candidate management metrics
             </p>
           </div>
