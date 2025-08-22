@@ -73,7 +73,7 @@ const CandidatePage = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold text-[var(--color-primary)] mb-6">All Managed Candidates</h1>
+      <h1 className="mb-4 text-heading-lg font-bold bg-gradient-primary bg-clip-text text-transparent">All Managed Candidates</h1>
 
       {/* Search & Filter */}
       <div className="flex flex-col sm:flex-row gap-4 mb-4">

@@ -103,7 +103,7 @@ const MyTasksPage = () => {
   return (
     <div className="md:p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-[var(--color-primary)]">My Tasks</h1>
+        <h1 className="text-heading-lg font-bold bg-gradient-primary bg-clip-text text-transparent">My Tasks</h1>
       </div>
 
       {/* Search & Filter */}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   Search, Filter, Download, Calendar, User, FileText, 
   Clock, TrendingUp, ChevronDown, BarChart3,
-  Users, FileCheck, FileWarning, Globe, Target
+  Users, FileCheck, FileWarning, Globe, Target, ArrowUpRight, ArrowDownRight  
 } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
@@ -201,7 +201,7 @@ const stats = [
         </motion.div>
 
         {/* Charts Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 mb-4">
           {/* Status Distribution */}
           <motion.div variants={itemVariants} className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 p-6">
             <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
@@ -256,7 +256,7 @@ const stats = [
         {/* Agent distribuiton & Processing Time */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-4"
         >
           {/* agent distribution */}
           <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 p-6">

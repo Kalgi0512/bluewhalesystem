@@ -89,7 +89,7 @@ const LeadsSummary = ({ leadsData }) => (
     <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
       <h2 className="text-lg font-semibold text-gray-900">Leads Summary</h2>
       <Link 
-        to="/sales-dashboard/leads"
+        to="/agent-dashboard/leads"
         className="text-sm text-[var(--color-secondary)] hover:text-[var(--color-primary)] cursor-pointer font-medium"
       >
         View All

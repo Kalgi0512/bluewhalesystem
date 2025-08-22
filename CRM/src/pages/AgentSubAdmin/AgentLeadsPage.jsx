@@ -20,7 +20,7 @@ const AgentLeadsPage = () => {
   const navigate = useNavigate();
 
   const handleLeadClick = (leadId) => {
-    navigate(`/sales-dashboard/leads/${leadId}`);
+    navigate(`/agent-dashboard/leads/${leadId}`);
   };
 
   const handleEditLead = (lead) => {
